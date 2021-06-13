@@ -1,0 +1,56 @@
+  <!DOCTYPE html>
+  <!-- Created By CodingLab - www.codinglabweb.com -->
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="UTF-8">
+      <!---<title> Responsive Registration Form | CodingLab </title>--->
+      <link rel="stylesheet" href="/static/css/signup.css">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Signup</title>
+     </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form  method="post" action="/signup">
+          {% csrf_token %}
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Username</span>
+              {{ form.username }}
+            </div>
+           
+            <div class="input-box">
+              <span class="details">Email</span>
+              {{ form.email }}
+            </div>
+            
+            <div class="input-box">
+              <span class="details">Password</span>
+            
+              {{ form.password1 }}
+            </div>
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              
+              {{ form.password2 }}
+            </div>
+            <div class="input-box">
+              <span class="details">Address</span>
+              <input type="text" required>
+            </div>
+          </div>
+          <div style="font-size: smaller;">
+            {{ form.errors }}
+          </div>
+          
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </body>
+  </html>
+  
